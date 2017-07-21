@@ -5,19 +5,29 @@
         <title>D3 Test</title>
         <script type="text/javascript" src="d3/d3.v3.min.js"></script>
         <style media="screen">
-            div.bar {
+            .bar {
                 display: inline-block;
                 width: 20px;
                 height: 75px;   /* We'll override this later */
                 background-color: teal;
+                margin-right: 2px;
                 }
         </style>
     </head>
     <body>
-        <div class="bar"></div>
 
         <script type="text/javascript">
         var dataset = [5, 10, 15, 20, 25];
+d3
+    .select("body")
+    .selectAll("div")
+    .data(dataset)
+    .enter()
+    .append("div")
+    .attr("class", "bar")
+    .style("height", function(d) {
+        return d * 5 + "px";
+    });
 
 d3
     .select("body")
