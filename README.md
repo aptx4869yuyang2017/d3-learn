@@ -145,6 +145,33 @@ var geodata = {
 
 
 ## Axes
-
+* Setting up an Axis `var xAxis = d3.svg.axis()   .scale(xScale) .orient("bottom");`
+* 调用 坐标轴 `svg.append("g") .call(xAxis);`
+* 修改样式
+```css
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+```
+* 坐标轴  位置
+```javascript
+svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0," + (h - padding) + ")")
+    .call(xAxis);
+```
+* ticks  `.ticks(5);  //Set rough # of ticks`
+* 格式化 
+```javascript
+var formatAsPercentage = d3.format(".1%");
+xAxis.tickFormat(0.214);
+```
 ## Transitions
 
