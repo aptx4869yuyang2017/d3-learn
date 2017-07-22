@@ -135,6 +135,14 @@ var geodata = {
 ## Making a scatterplot
 
 ## Scales
+* 概念 ： Domains and Ranges 
+* 操作：
+    * `var scale = d3.scale.linear() .domain([100, 500]) .range([10, 350]);`
+* 实战
+    * 反序 range 调整对象分布方向  `.range([h, 0]);`
+    * padding  `.range([h - padding, padding]);` 注意四个方向都要留 padding
+    * 新增数据后，可能需要适时调整整个画布大小，以防对象过密相互重叠
+
 
 ## Axes
 

@@ -72,7 +72,7 @@ svg
     .attr("text-anchor", "middle")
     .attr("x", function(d, i) {
         return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-    }) // (w / dataset.length) 单个 bar 的占地空间 (w / dataset.length - barPadding) 单个 bar 的宽度
+    }) // (w / dataset.length) 单个 bar 的占地空间 (w / dataset.length - barPadding) 单个 bar 的宽度  结果就是定位点放到了 每个 bar 的中间  然后用居中对齐的方式放 label
     .attr("y", function(d) {
         return h - d * 4 + 14;
     })
